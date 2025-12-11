@@ -66,10 +66,12 @@ Learn about:
 ## 🚀 Quick Navigation
 
 ### For New Developers
-1. Start with [Goals](goals.md) to understand the project vision
-2. Read [Development Rules](rules.md) to learn coding standards
-3. Follow [Workflows](workflows.md) for setup and common tasks
-4. Reference [Business Rules](business-rules.md) when working on calculations
+1. Start with [Objetivos del Proyecto](project/goals.md)
+2. Read [Reglas del Proyecto](project/rules.md)
+3. Follow [Estructura de Navegación](project/navigation.md)
+4. Learn about [Flujos de Trabajo](project/workflows.md)
+5. Understand [Reglas de Negocio](domain/business-rules.md)
+6. Explore the [Sistema de Diseño](shared/design_system.md)
 
 ### For Project Managers
 1. Review [Goals](goals.md) for project objectives and roadmap
