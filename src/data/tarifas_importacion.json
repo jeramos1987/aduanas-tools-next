@@ -1,0 +1,67 @@
+[
+    {
+        "origen": "Guangzhou",
+        "rango_cbm_min": 0,
+        "rango_cbm_max": 1,
+        "flete_base_usd": 250,
+        "gastos_origen_usd": 50,
+        "gastos_destino_usd": 120
+    },
+    {
+        "origen": "Guangzhou",
+        "rango_cbm_min": 1,
+        "rango_cbm_max": 3,
+        "flete_base_usd": 450,
+        "gastos_origen_usd": 80,
+        "gastos_destino_usd": 150
+    },
+    {
+        "origen": "Guangzhou",
+        "rango_cbm_min": 3,
+        "rango_cbm_max": 10,
+        "flete_base_usd": 1100,
+        "gastos_origen_usd": 150,
+        "gastos_destino_usd": 250
+    },
+    {
+        "origen": "Yiwu",
+        "rango_cbm_min": 0,
+        "rango_cbm_max": 1,
+        "flete_base_usd": 260,
+        "gastos_origen_usd": 60,
+        "gastos_destino_usd": 120
+    },
+    {
+        "origen": "Yiwu",
+        "rango_cbm_min": 1,
+        "rango_cbm_max": 3,
+        "flete_base_usd": 480,
+        "gastos_origen_usd": 90,
+        "gastos_destino_usd": 150
+    },
+    {
+        "origen": "Shenzhen",
+        "rango_cbm_min": 0,
+        "rango_cbm_max": 1,
+        "flete_base_usd": 240,
+        "gastos_origen_usd": 50,
+        "gastos_destino_usd": 120
+    },
+    {
+        "origen": "Shenzhen",
+        "rango_cbm_min": 1,
+        "rango_cbm_max": 3,
+        "flete_base_usd": 440,
+        "gastos_origen_usd": 80,
+        "gastos_destino_usd": 150
+    },
+    {
+        "origen": "default",
+        "rango_cbm_min": 0,
+        "rango_cbm_max": 999,
+        "flete_base_usd": 300,
+        "gastos_origen_usd": 100,
+        "gastos_destino_usd": 200,
+        "nota": "Tarifa fallback por CBM si no hay match"
+    }
+]

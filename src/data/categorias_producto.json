@@ -1,0 +1,44 @@
+[
+    {
+        "id": "electronics",
+        "name": "Electrónica y Tecnología",
+        "arancel_base_pct": 0,
+        "seguro_factor": 0.02,
+        "descripcion": "Celulares, laptops, accesorios, gadgets."
+    },
+    {
+        "id": "textil",
+        "name": "Textil y Confecciones",
+        "arancel_base_pct": 11,
+        "seguro_factor": 0.015,
+        "descripcion": "Ropa, telas, insumos textiles."
+    },
+    {
+        "id": "juguetes",
+        "name": "Juguetes",
+        "arancel_base_pct": 6,
+        "seguro_factor": 0.015,
+        "descripcion": "Juguetes para niños, educativos, etc."
+    },
+    {
+        "id": "hogar",
+        "name": "Artículos para el Hogar",
+        "arancel_base_pct": 6,
+        "seguro_factor": 0.015,
+        "descripcion": "Utensilios, decoración, organización."
+    },
+    {
+        "id": "maquinaria",
+        "name": "Maquinaria y Herramientas",
+        "arancel_base_pct": 0,
+        "seguro_factor": 0.01,
+        "descripcion": "Equipos industriales, herramientas manuales o eléctricas."
+    },
+    {
+        "id": "general",
+        "name": "Carga General (Otros)",
+        "arancel_base_pct": 6,
+        "seguro_factor": 0.015,
+        "descripcion": "Cualquier otra mercadería no restringida."
+    }
+]

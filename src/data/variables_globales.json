@@ -1,0 +1,24 @@
+{
+    "igv_pct": 0.16,
+    "ipm_pct": 0.02,
+    "percepcion_base_pct": 0.10,
+    "percepcion_frecuente_pct": 0.035,
+    "seguro_default_pct": 0.015,
+    "tasa_cambio_referencial": 3.75,
+    "gastos_despacho_flat_min": 150,
+    "zonas_china": [
+        "Guangzhou",
+        "Yiwu",
+        "Shenzhen",
+        "Ningbo",
+        "Shanghai",
+        "Otros"
+    ],
+    "ciudades_peru": [
+        "Lima",
+        "Callao",
+        "Arequipa",
+        "Trujillo",
+        "Otras"
+    ]
+}

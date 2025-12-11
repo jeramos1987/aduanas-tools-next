@@ -36,10 +36,18 @@ export type Tool = {
 export const TOOLS: Tool[] = [
     {
         id: "calculator",
-        title: "Calculadora de Aduanas",
-        description: "Calcula el valor en aduana (CIF), derechos arancelarios e IGV de tus importaciones de forma rápida y precisa.",
+        title: "Calculadora de Aduanas (Básica)",
+        description: "Calcula impuestos aduaneros (CIF, Ad Valorem, IGV) para una importación genérica.",
         icon: "🧮",
         href: "/calculator",
+        available: true,
+    },
+    {
+        id: "import-calculator",
+        title: "Calculadora de Importación China 🇨🇳",
+        description: "Herramienta completa para estimar costos totales puerta a puerta desde China.",
+        icon: "🚢",
+        href: "/herramientas/import-calculator",
         available: true,
     },
     {
