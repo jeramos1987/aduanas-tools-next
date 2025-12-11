@@ -60,7 +60,7 @@ export function Footer() {
                                     href="https://www.sunat.gob.pe"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="hover:text-blue-400 transition-colors"
+                                    className="hover:text-violet-400 transition-colors"
                                 >
                                     SUNAT
                                 </a>
@@ -70,7 +70,7 @@ export function Footer() {
                                     href="https://www.gob.pe/aduanas"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="hover:text-blue-400 transition-colors"
+                                    className="hover:text-violet-400 transition-colors"
                                 >
                                     Aduanas Perú
                                 </a>
@@ -80,7 +80,7 @@ export function Footer() {
                                     href="https://www.siicex.gob.pe"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="hover:text-blue-400 transition-colors"
+                                    className="hover:text-violet-400 transition-colors"
                                 >
                                     SIICEX
                                 </a>

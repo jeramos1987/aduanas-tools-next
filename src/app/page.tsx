@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* ===== HERO SECTION ===== */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 text-white">
+      <section className="bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="text-center animate-fade-in">
             {/* Icono principal */}
@@ -32,11 +32,11 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Centro de Herramientas
               <br />
-              <span className="text-blue-200">para Importadores</span>
+              <span className="text-violet-200">para Importadores</span>
             </h1>
 
             {/* Descripción */}
-            <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-violet-100 mb-8 max-w-3xl mx-auto leading-relaxed">
               Simplifica tus operaciones de comercio exterior con nuestras
               herramientas especializadas. Calcula impuestos, busca partidas
               arancelarias y más.
@@ -45,7 +45,7 @@ export default function Home() {
             {/* Botón CTA */}
             <Link
               href="/calculator"
-              className="inline-block bg-white text-blue-600 font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              className="inline-block bg-white text-violet-600 font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
               🧮 Probar Calculadora de Aduanas
             </Link>
@@ -90,7 +90,7 @@ export default function Home() {
       </section>
 
       {/* ===== SECCIÓN DE BENEFICIOS ===== */}
-      <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-16 md:py-20">
+      <section className="bg-gradient-to-br from-gray-50 to-violet-50 py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Título de sección */}
           <div className="text-center mb-12">
@@ -144,17 +144,17 @@ export default function Home() {
       </section>
 
       {/* ===== CALL TO ACTION FINAL ===== */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
+      <section className="bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             ¿Listo para simplificar tus importaciones?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-violet-100 mb-8">
             Comienza a usar nuestras herramientas ahora mismo
           </p>
           <Link
             href="/calculator"
-            className="inline-block bg-white text-blue-600 font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            className="inline-block bg-white text-violet-600 font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
           >
             Comenzar Ahora →
           </Link>

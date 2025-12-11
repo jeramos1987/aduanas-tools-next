@@ -55,7 +55,7 @@ export const CalculatorForm: React.FC<Props> = ({ onCalculate }) => {
                         name="category"
                         value={formData.category}
                         onChange={handleChange}
-                        className="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                        className="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all"
                     >
                         {categorias.map((cat) => (
                             <option key={cat.id} value={cat.id}>
@@ -79,7 +79,7 @@ export const CalculatorForm: React.FC<Props> = ({ onCalculate }) => {
                             value={formData.fobValue}
                             onChange={handleChange}
                             min="0"
-                            className="w-full pl-8 p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                            className="w-full pl-8 p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-violet-500 outline-none"
                         />
                     </div>
                 </div>
@@ -95,7 +95,7 @@ export const CalculatorForm: React.FC<Props> = ({ onCalculate }) => {
                             onChange={handleChange}
                             step="0.01"
                             min="0"
-                            className="w-24 p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                            className="w-24 p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-violet-500 outline-none"
                         />
                         <div className="flex-1 flex gap-1">
                             {CBM_PRESETS.map((preset) => (
@@ -103,7 +103,7 @@ export const CalculatorForm: React.FC<Props> = ({ onCalculate }) => {
                                     key={preset.label}
                                     type="button"
                                     onClick={() => setFormData(d => ({ ...d, cbm: preset.value }))}
-                                    className={`text-xs px-2 py-1 rounded border ${formData.cbm === preset.value ? 'bg-blue-50 border-blue-200 text-blue-700' : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100'}`}
+                                    className={`text-xs px-2 py-1 rounded border ${formData.cbm === preset.value ? 'bg-violet-50 border-violet-200 text-violet-700' : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100'}`}
                                 >
                                     {preset.label.split("(")[0]}
                                 </button>
@@ -121,7 +121,7 @@ export const CalculatorForm: React.FC<Props> = ({ onCalculate }) => {
                         value={formData.quantity}
                         onChange={handleChange}
                         min="1"
-                        className="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                        className="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-violet-500 outline-none"
                     />
                 </div>
 
@@ -132,7 +132,7 @@ export const CalculatorForm: React.FC<Props> = ({ onCalculate }) => {
                         name="origin"
                         value={formData.origin}
                         onChange={handleChange}
-                        className="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                        className="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-violet-500 outline-none"
                     >
                         {variablesGlobales.zonas_china.map((z) => (
                             <option key={z} value={z}>{z}</option>
@@ -147,7 +147,7 @@ export const CalculatorForm: React.FC<Props> = ({ onCalculate }) => {
                         name="destination"
                         value={formData.destination}
                         onChange={handleChange}
-                        className="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                        className="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-violet-500 outline-none"
                     >
                         {variablesGlobales.ciudades_peru.map((c) => (
                             <option key={c} value={c}>{c}</option>
@@ -158,7 +158,7 @@ export const CalculatorForm: React.FC<Props> = ({ onCalculate }) => {
 
             <button
                 type="submit"
-                className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5"
+                className="w-full py-4 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5"
             >
                 Calcular Costos de Importación
             </button>

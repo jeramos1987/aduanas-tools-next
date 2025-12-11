@@ -95,7 +95,12 @@ Follow these steps to add a new tool to the platform:
 - Sketch the UI layout
 - Determine business logic needed
 
-### 2. Update Tool Configuration
+### 2. Create Implementation Plan
+- Create a Markdown file (e.g., `docs/tools/[tool-name]/implementation-plan.md`)
+- Document the goal, proposed changes, and verification plan
+- Update this plan if requirements change during implementation or future modifications
+
+### 3. Update Tool Configuration
 Edit `src/config/tools.ts`:
 ```typescript
 {
@@ -108,7 +113,7 @@ Edit `src/config/tools.ts`:
 }
 ```
 
-### 3. Create Domain Types
+### 4. Create Domain Types
 Create `src/domain/new-tool/types.ts`:
 ```typescript
 /**
@@ -130,7 +135,7 @@ export type NewToolResult = {
 };
 ```
 
-### 4. Implement Business Logic
+### 5. Implement Business Logic
 Create `src/domain/new-tool/logic.ts`:
 ```typescript
 import type { NewToolInput, NewToolResult } from "./types";
@@ -147,7 +152,7 @@ export function calculateNewTool(input: NewToolInput): NewToolResult {
 }
 ```
 
-### 5. Create Custom Hook
+### 6. Create Custom Hook
 Create `src/features/new-tool/hooks/useNewTool.ts`:
 ```typescript
 import { useState } from "react";
@@ -175,7 +180,7 @@ export function useNewTool() {
 }
 ```
 
-### 6. Create Feature Components
+### 7. Create Feature Components
 Create `src/features/new-tool/components/NewToolForm.tsx`:
 ```typescript
 "use client";
@@ -194,7 +199,7 @@ export default function NewToolForm() {
 }
 ```
 
-### 7. Create Page
+### 8. Create Page
 Create `src/app/(tools)/new-tool/page.tsx`:
 ```typescript
 import NewToolForm from "@/features/new-tool/components/NewToolForm";
@@ -209,7 +214,7 @@ export default function NewToolPage() {
 }
 ```
 
-### 8. Update Tool Availability
+### 9. Update Tool Availability
 Once the tool is complete and tested, update `src/config/tools.ts`:
 ```typescript
 {
@@ -219,7 +224,7 @@ Once the tool is complete and tested, update `src/config/tools.ts`:
 }
 ```
 
-### 9. Test
+### 10. Test
 - Test all inputs and edge cases
 - Verify calculations are correct
 - Check responsive design
@@ -403,7 +408,7 @@ npm run lint -- --fix
 
 ### Documentation Updates
 When making significant changes:
-1. Update relevant documentation in `docs/`
+1. Update relevant documentation in `docs/` and the tool's implementation plan
 2. Update README if setup process changes
 3. Update code comments and JSDoc
 4. Update business rules if calculations change

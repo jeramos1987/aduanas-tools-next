@@ -49,13 +49,13 @@ export default function ImportCalculatorPage() {
                     {/* Left Column: Form */}
                     <div className="lg:col-span-5 space-y-6">
                         <h2 className="text-xl font-semibold text-slate-800 flex items-center gap-2">
-                            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 text-blue-600 text-sm font-bold">1</span>
+                            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-violet-100 text-violet-600 text-sm font-bold">1</span>
                             Ingresa los datos
                         </h2>
                         <CalculatorForm onCalculate={handleCalculate} />
 
                         {/* Tips / Info */}
-                        <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 text-sm text-blue-800">
+                        <div className="bg-violet-50 p-4 rounded-lg border border-violet-100 text-sm text-violet-800">
                             <p className="font-semibold mb-1">💡 ¿No sabes el CBM?</p>
                             <p>El CBM es el volumen en metros cúbicos. Para una caja de 50x50x50cm, el CBM es 0.125.</p>
                         </div>
@@ -64,7 +64,7 @@ export default function ImportCalculatorPage() {
                     {/* Right Column: Results */}
                     <div className="lg:col-span-7">
                         <h2 className="text-xl font-semibold text-slate-800 flex items-center gap-2 mb-6">
-                            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-indigo-100 text-indigo-600 text-sm font-bold">2</span>
+                            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-100 text-purple-600 text-sm font-bold">2</span>
                             Resultados y Análisis
                         </h2>
 

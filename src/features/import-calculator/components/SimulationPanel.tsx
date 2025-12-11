@@ -24,7 +24,7 @@ export const SimulationPanel: React.FC<Props> = ({ overrides, onUpdate }) => {
                     <h3 className="text-lg font-semibold text-slate-800">Simulador de Escenarios</h3>
                     <p className="text-slate-500 text-sm">Ajusta variables clave para optimizar costos.</p>
                 </div>
-                <span className="text-xs font-bold text-blue-600 px-2 py-1 bg-blue-50 rounded border border-blue-100 uppercase tracking-wide">
+                <span className="text-xs font-bold text-violet-600 px-2 py-1 bg-violet-50 rounded border border-violet-100 uppercase tracking-wide">
                     Modo Simulación
                 </span>
             </div>
@@ -36,25 +36,25 @@ export const SimulationPanel: React.FC<Props> = ({ overrides, onUpdate }) => {
                     <div className="flex flex-wrap gap-2">
                         <button
                             onClick={() => setPerception(undefined)} // Default (usually 10% or whatever logic)
-                            className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPerception === undefined ? 'bg-blue-600 text-white shadow-md' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                            className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPerception === undefined ? 'bg-violet-600 text-white shadow-md' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
                         >
                             Auto (Default)
                         </button>
                         <button
                             onClick={() => setPerception(0.10)}
-                            className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPerception === 0.10 ? 'bg-blue-600 text-white shadow-md' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                            className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPerception === 0.10 ? 'bg-violet-600 text-white shadow-md' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
                         >
                             10% (Inicial)
                         </button>
                         <button
                             onClick={() => setPerception(0.035)}
-                            className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPerception === 0.035 ? 'bg-blue-600 text-white shadow-md' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                            className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPerception === 0.035 ? 'bg-violet-600 text-white shadow-md' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
                         >
                             3.5% (Frecuente)
                         </button>
                         <button
                             onClick={() => setPerception(0)}
-                            className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPerception === 0 ? 'bg-blue-600 text-white shadow-md' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                            className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPerception === 0 ? 'bg-violet-600 text-white shadow-md' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
                         >
                             0% (Exonerado)
                         </button>

@@ -44,7 +44,8 @@ export function Navbar() {
                         </div>
                         <div>
                             <div className="text-xl font-bold">Aduanas Tools</div>
-                            <div className="text-xs text-violet-100">Centro de Herramientas</div>
+                            <div className="text-xs text-violet-100 hidden sm:block">Centro de Herramientas</div>
+                            <div className="text-xs text-violet-100 sm:hidden">Herramientas</div>
                         </div>
                     </Link>
 

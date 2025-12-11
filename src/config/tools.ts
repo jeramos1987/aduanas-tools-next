@@ -51,6 +51,14 @@ export const TOOLS: Tool[] = [
         available: true,
     },
     {
+        id: "customs-interest-calculator",
+        title: "Calculadora de Intereses de Derechos Aduaneros",
+        description: "Calcula los intereses moratorios de tus deudas aduaneras según la normativa SUNAT.",
+        icon: "⏱️",
+        href: "/customs-interest-calculator",
+        available: true,
+    },
+    {
         id: "tariff-search",
         title: "Buscador de Partidas Arancelarias",
         description: "Encuentra la partida arancelaria correcta para tus productos y conoce las tasas aplicables.",

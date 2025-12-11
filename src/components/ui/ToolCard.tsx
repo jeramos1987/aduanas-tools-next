@@ -56,7 +56,7 @@ export function ToolCard({ tool }: ToolCardProps) {
     return (
         <Link
             href={tool.href}
-            className="group relative bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-300 block"
+            className="group relative bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-xl hover:border-violet-300 transition-all duration-300 block"
         >
             {/* Icono de la herramienta con animación */}
             <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
@@ -64,17 +64,17 @@ export function ToolCard({ tool }: ToolCardProps) {
             </div>
 
             {/* Título con color que cambia al hover */}
-            <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 mb-2 transition-colors">
+            <h3 className="text-xl font-bold text-gray-900 group-hover:text-violet-600 mb-2 transition-colors truncate">
                 {tool.title}
             </h3>
 
             {/* Descripción */}
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            <p className="text-gray-600 text-sm leading-relaxed mb-4 text-clamp-2">
                 {tool.description}
             </p>
 
             {/* Flecha indicadora con animación */}
-            <div className="flex items-center text-blue-600 font-semibold text-sm">
+            <div className="flex items-center text-violet-600 font-semibold text-sm">
                 <span>Abrir herramienta</span>
                 <svg
                     className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"

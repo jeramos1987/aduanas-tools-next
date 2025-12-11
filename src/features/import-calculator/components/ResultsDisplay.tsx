@@ -19,12 +19,12 @@ export const ResultsDisplay: React.FC<Props> = ({ result }) => {
         <div className="space-y-6 animate-fade-in">
             {/* High Level Summary */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-6 rounded-2xl text-white shadow-xl">
-                    <p className="text-blue-100 text-sm font-medium mb-1">Costo Total Puesto en Perú</p>
+                <div className="bg-gradient-to-br from-violet-600 to-purple-700 p-6 rounded-2xl text-white shadow-xl">
+                    <p className="text-violet-100 text-sm font-medium mb-1">Costo Total Puesto en Perú</p>
                     <div className="text-3xl font-bold mb-2">
                         <Currency value={result.totalLandedCostUSD} />
                     </div>
-                    <div className="text-blue-200 text-sm">
+                    <div className="text-violet-200 text-sm">
                         <Currency value={result.totalLandedCostSOL} currency="PEN" /> (T.C. {result.exchangeRate})
                     </div>
                 </div>
@@ -60,7 +60,7 @@ export const ResultsDisplay: React.FC<Props> = ({ result }) => {
                             <span className="text-slate-600">Seguro</span>
                             <span className="font-medium"><Currency value={result.insurance} /></span>
                         </div>
-                        <div className="flex justify-between text-sm font-semibold text-blue-600 mt-1">
+                        <div className="flex justify-between text-sm font-semibold text-violet-600 mt-1">
                             <span>Valor CIF</span>
                             <span><Currency value={result.cif} /></span>
                         </div>
