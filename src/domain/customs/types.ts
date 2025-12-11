@@ -55,6 +55,13 @@ export type CustomsInput = {
    * Se aplica sobre la base imponible (Valor en Aduana + Derechos)
    */
   igvRate: number;
+
+  /**
+   * Tasa de Percepción - Porcentaje de percepción del IGV
+   * Se aplica sobre el importe total de la operación (CIF + Derechos + IGV)
+   * Tasas comunes: 3.5% (0.035), 10% (0.10) para primera importación
+   */
+  perceptionRate: number;
 };
 
 /**
@@ -95,10 +102,23 @@ export type CustomsResult = {
   igv: number;
 
   /** 
-   * Total de impuestos a pagar
+   * Monto de Percepción
+   * Es el cobro adelantado del IGV = (Valor en Aduana + Derechos + IGV) × Tasa percepción
+   * Ejemplo: ($1250 + $75 + $238.50) × 0.035 = $54.72 USD
+   */
+  perception: number;
+
+  /** 
+   * Total de impuestos a pagar (Tributos en aduana)
    * Es la suma de: Derechos arancelarios + IGV
-   * Este es el monto total que pagarás a la aduana
-   * Ejemplo: $75 + $238.50 = $313.50 USD
+   * Nota: La percepción no se considera "impuesto" aduanero estrictamente, sino cobro adelantado
    */
   totalTaxes: number;
+
+  /**
+   * Total a Pagar (Cashflow requerido)
+   * Es la suma de: Total Impuestos + Percepción
+   * Este es el dinero líquido que necesitas para desaduanar
+   */
+  totalAmount: number;
 };

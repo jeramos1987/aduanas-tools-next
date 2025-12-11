@@ -70,11 +70,22 @@ export function calculateCustomsTaxes(input: CustomsInput): CustomsResult {
   // Ejemplo: IGV = $1325 × 0.18 = $238.50
   const igv = igvBase * input.igvRate;
 
-  // PASO 5: Calcular el Total de Impuestos a Pagar
+  // PASO 5: Calcular el Total de Impuestos a Pagar (Tributos)
   // Es la suma de todos los impuestos: Derechos + IGV
-  // Este es el monto total que pagarás a la aduana
-  // Ejemplo: Total = $75 + $238.50 = $313.50
+  // Este es el monto total que pagarás a la aduana por concepto de deuda tributaria
   const totalTaxes = duty + igv;
+
+  // PASO 6: Calcular la Percepción
+  // La percepción se aplica sobre el precio de venta total (CIF + Impuestos)
+  // Base Percepción = Valor en Aduana + Derechos + IGV
+  // Ejemplo: Base = $1250 + $75 + $238.50 = $1563.50
+  // Percepción = $1563.50 × 0.035 = $54.72
+  const perceptionBase = customsValue + totalTaxes;
+  const perception = perceptionBase * input.perceptionRate;
+
+  // PASO 7: Calcular el Total a Pagar (Cashflow)
+  // Es lo que realmente debe desembolsar el importador para levantar la mercancía
+  const totalAmount = totalTaxes + perception;
 
   // Retornamos un objeto con todos los valores calculados
   // Esto permite mostrar el desglose completo al usuario
@@ -83,6 +94,8 @@ export function calculateCustomsTaxes(input: CustomsInput): CustomsResult {
     duty,          // Derechos arancelarios
     igvBase,       // Base para calcular el IGV
     igv,           // IGV calculado
-    totalTaxes,    // Total de impuestos (duty + igv)
+    totalTaxes,    // Total impuestos (duty + igv)
+    perception,    // Monto de percepción calculado
+    totalAmount    // Total general a pagar
   };
 }

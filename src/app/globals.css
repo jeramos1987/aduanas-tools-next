@@ -12,18 +12,26 @@
  * Facilita cambiar el tema del sitio desde un solo lugar
  */
 :root {
-  --color-primary: #2563eb; /* Azul principal */
-  --color-primary-dark: #1d4ed8;
-  --color-secondary: #10b981; /* Verde para éxitos */
-  --color-accent: #f59e0b; /* Naranja para destacados */
+  --color-primary: #a78bfa;
+  /* Violet 400 - Soft Friendly */
+  --color-primary-dark: #8b5cf6;
+  /* Violet 500 */
+  --color-secondary: #34d399;
+  /* Mint 400 */
+  --color-accent: #fdba74;
+  /* Orange 300 - Peach */
+  --color-bg: #f8fafc;
+  /* Slate 50 */
+  --color-surface: #ffffff;
+  /* White */
 }
 
 /**
  * Estilos base del body
  */
 body {
-  @apply antialiased;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  @apply antialiased bg-slate-50 text-slate-600;
+  font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 /**
@@ -44,6 +52,7 @@ body,
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -58,7 +67,7 @@ body,
  * Gradiente de texto para títulos especiales
  */
 .gradient-text {
-  @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-slate-900 to-purple-600 bg-clip-text text-transparent;
 }
 
 /**

@@ -34,7 +34,7 @@ export function Navbar() {
     const availableTools = TOOLS.filter((tool) => tool.available);
 
     return (
-        <nav className="bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg">
+        <nav className="bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white shadow-lg shadow-violet-200">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* ===== LOGO Y NOMBRE ===== */}
@@ -44,7 +44,7 @@ export function Navbar() {
                         </div>
                         <div>
                             <div className="text-xl font-bold">Aduanas Tools</div>
-                            <div className="text-xs text-blue-100">Centro de Herramientas</div>
+                            <div className="text-xs text-violet-100">Centro de Herramientas</div>
                         </div>
                     </Link>
 
@@ -54,8 +54,8 @@ export function Navbar() {
                         <Link
                             href="/"
                             className={`px-4 py-2 rounded-lg font-medium transition-colors ${pathname === "/"
-                                    ? "bg-blue-800 text-white"
-                                    : "text-blue-100 hover:bg-blue-500"
+                                ? "bg-white/20 text-white"
+                                : "text-violet-50 hover:bg-white/10"
                                 }`}
                         >
                             Inicio
@@ -67,8 +67,8 @@ export function Navbar() {
                                 key={tool.id}
                                 href={tool.href}
                                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${pathname === tool.href
-                                        ? "bg-blue-800 text-white"
-                                        : "text-blue-100 hover:bg-blue-500"
+                                    ? "bg-white/20 text-white"
+                                    : "text-violet-50 hover:bg-white/10"
                                     }`}
                             >
                                 {tool.icon} {tool.title}
@@ -79,7 +79,7 @@ export function Navbar() {
                     {/* ===== BOTÓN MENÚ MÓVIL ===== */}
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="md:hidden p-2 rounded-lg hover:bg-blue-500 transition-colors"
+                        className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
                         aria-label="Abrir menú"
                     >
                         <svg
@@ -114,8 +114,8 @@ export function Navbar() {
                             href="/"
                             onClick={() => setMobileMenuOpen(false)}
                             className={`block px-4 py-2 rounded-lg font-medium transition-colors ${pathname === "/"
-                                    ? "bg-blue-800 text-white"
-                                    : "text-blue-100 hover:bg-blue-500"
+                                ? "bg-white/20 text-white"
+                                : "text-violet-100 hover:bg-white/10"
                                 }`}
                         >
                             Inicio
@@ -127,8 +127,8 @@ export function Navbar() {
                                 href={tool.href}
                                 onClick={() => setMobileMenuOpen(false)}
                                 className={`block px-4 py-2 rounded-lg font-medium transition-colors ${pathname === tool.href
-                                        ? "bg-blue-800 text-white"
-                                        : "text-blue-100 hover:bg-blue-500"
+                                    ? "bg-white/20 text-white"
+                                    : "text-violet-100 hover:bg-white/10"
                                     }`}
                             >
                                 {tool.icon} {tool.title}

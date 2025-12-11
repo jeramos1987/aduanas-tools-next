@@ -63,6 +63,9 @@ export function CalculatorForm({ onSubmit }: Props) {
   /** Tasa IGV - Porcentaje del IGV (valor por defecto: 18%) */
   const [igvRate, setIgvRate] = useState("0.18");
 
+  /** Tasa Percepción - Porcentaje de percepción (valor por defecto: 3.5%) */
+  const [perceptionRate, setPerceptionRate] = useState("0.035");
+
   // ============================================================================
   // VISTA PREVIA DEL VALOR EN ADUANA
   // ============================================================================
@@ -76,6 +79,7 @@ export function CalculatorForm({ onSubmit }: Props) {
     otherCosts: Number(otherCosts) || 0,
     dutyRate: Number(dutyRate) || 0,    // Aunque no se usa para el VA, el tipo lo requiere
     igvRate: Number(igvRate) || 0,
+    perceptionRate: Number(perceptionRate) || 0,
   };
 
   // Calculamos el Valor en Aduana usando la lógica de negocio del dominio
@@ -104,49 +108,84 @@ export function CalculatorForm({ onSubmit }: Props) {
   // ============================================================================
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3">
-      {/* ===== SECCIÓN 1: DATOS PARA EL VALOR EN ADUANA ===== */}
+    <form onSubmit={handleSubmit} className="space-y-8">
 
-      {/* Campo FOB - Valor de la mercancía */}
-      <Field label="FOB (USD)" value={fob} onChange={setFob} />
+      {/* ===== SECCIÓN 1: DATOS DEL ENVÍO ===== */}
+      <section>
+        <h3 className="text-lg font-bold text-slate-700 mb-4 border-b border-slate-100 pb-2">
+          🚢 Datos del Envío
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Campo FOB */}
+          <Field label="FOB (USD)" value={fob} onChange={setFob} placeholder="Valor mercancía" />
 
-      {/* Campo Flete - Costo del transporte */}
-      <Field label="Flete (USD)" value={freight} onChange={setFreight} />
+          {/* Campo Flete */}
+          <Field label="Flete (USD)" value={freight} onChange={setFreight} placeholder="Costo transporte" />
 
-      {/* Campo Seguro - Costo del seguro */}
-      <Field label="Seguro (USD)" value={insurance} onChange={setInsurance} />
+          {/* Campo Seguro */}
+          <Field label="Seguro (USD)" value={insurance} onChange={setInsurance} placeholder="Costo seguro" />
 
-      {/* Campo Otros costos - Gastos adicionales */}
-      <Field label="Otros costos (USD)" value={otherCosts} onChange={setOtherCosts} />
+          {/* Campo Otros costos */}
+          <Field label="Otros costos (USD)" value={otherCosts} onChange={setOtherCosts} placeholder="Gastos extra" />
+        </div>
+      </section>
 
       {/* ===== VISTA PREVIA DEL VALOR EN ADUANA ===== */}
-      {/* Mostramos el Valor en Aduana calculado en tiempo real */}
-      <div className="p-3 border rounded bg-gray-50">
-        <p className="text-sm text-gray-600">Valor en Aduana (VA):</p>
-        <p className="text-xl font-bold">USD {customsValue.toFixed(2)}</p>
+      <div className="bg-sky-50 border border-sky-100 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+        <div>
+          <p className="text-sm font-bold text-sky-600">Valor en Aduana (CIF)</p>
+          <p className="text-xs text-sky-400 font-medium">Base para impuestos</p>
+        </div>
+        <div className="text-2xl font-black text-sky-700">
+          $ {customsValue.toFixed(2)}
+        </div>
       </div>
 
-      {/* ===== SECCIÓN 2: TASAS DE IMPUESTOS ===== */}
+      {/* ===== SECCIÓN 2: TASAS E IMPUESTOS ===== */}
+      <section>
+        <h3 className="text-lg font-bold text-slate-700 mb-4 border-b border-slate-100 pb-2">
+          ⚖️ Tasas e Impuestos
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Campo Tasa Ad Valorem */}
+          <Field
+            label="Ad Valorem"
+            value={dutyRate}
+            onChange={setDutyRate}
+            step="0.001"
+            hint="Ej. 0.06 = 6%, 0.11 = 11%"
+          />
 
-      {/* Campo Tasa ad valorem - Porcentaje de derechos arancelarios */}
-      <Field
-        label="Tasa ad valorem (ej. 0.06 para 6%)"
-        value={dutyRate}
-        onChange={setDutyRate}
-      />
+          {/* Campo Tasa IGV */}
+          <Field
+            label="IGV + IPM"
+            value={igvRate}
+            onChange={setIgvRate}
+            step="0.01"
+            hint="Generalmente 0.18 (18%)"
+          />
 
-      {/* Campo Tasa IGV - Porcentaje del IGV */}
-      <Field
-        label="Tasa IGV (ej. 0.18 para 18%)"
-        value={igvRate}
-        onChange={setIgvRate}
-      />
+          {/* Campo Tasa Percepción */}
+          <Field
+            label="Percepción"
+            value={perceptionRate}
+            onChange={setPerceptionRate}
+            step="0.001"
+            hint="3.5%, 10% o 0% según caso"
+          />
+        </div>
+      </section>
 
       {/* ===== BOTÓN DE ENVÍO ===== */}
-      {/* Al hacer clic, se ejecuta handleSubmit que envía los datos al padre */}
-      <button type="submit" className="border rounded px-4 py-2 mt-2">
-        Calcular tributos
-      </button>
+      <div className="pt-4">
+        <button
+          type="submit"
+          className="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold py-4 px-6 rounded-2xl shadow-lg shadow-violet-200 hover:shadow-xl hover:shadow-violet-300 transition-all transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer"
+        >
+          <span>🧮</span>
+          <span>Calcular Tributos y Percepción</span>
+        </button>
+      </div>
     </form>
   );
 }
@@ -155,44 +194,28 @@ export function CalculatorForm({ onSubmit }: Props) {
 // COMPONENTE AUXILIAR: FIELD
 // ============================================================================
 
-/**
- * Props del componente Field
- */
 type FieldProps = {
-  /** Etiqueta que se muestra arriba del campo */
   label: string;
-  /** Valor actual del campo */
   value: string;
-  /** Función que se ejecuta cuando el usuario cambia el valor */
   onChange: (v: string) => void;
+  placeholder?: string;
+  step?: string;
+  hint?: string;
 };
 
-/**
- * Field - Componente reutilizable para campos de entrada numéricos
- * 
- * Este componente encapsula la lógica común de todos los campos:
- * - Etiqueta descriptiva
- * - Input de tipo número con decimales
- * - Estilos consistentes
- * 
- * @param label - Texto de la etiqueta
- * @param value - Valor actual del campo
- * @param onChange - Callback cuando cambia el valor
- */
-function Field({ label, value, onChange }: FieldProps) {
+function Field({ label, value, onChange, placeholder, step = "0.01", hint }: FieldProps) {
   return (
     <div className="space-y-1">
-      {/* Etiqueta del campo */}
-      <label className="block text-sm font-medium">{label}</label>
-
-      {/* Input numérico */}
+      <label className="block text-sm font-semibold text-slate-600 ml-1 mb-1">{label}</label>
       <input
-        className="border rounded px-2 py-1 w-full"
-        type="number"           // Solo permite números
-        step="0.01"             // Permite decimales con 2 dígitos
-        value={value}           // Valor controlado por React
-        onChange={(e) => onChange(e.target.value)} // Actualiza el estado al cambiar
+        className="block w-full rounded-xl bg-slate-50 border-slate-200 text-slate-700 shadow-sm focus:border-violet-400 focus:ring-violet-400 focus:ring-opacity-50 sm:text-sm px-4 py-3 border transition-colors"
+        type="number"
+        step={step}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
       />
+      {hint && <p className="text-xs text-gray-500">{hint}</p>}
     </div>
   );
 }
