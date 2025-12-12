@@ -98,4 +98,12 @@ export const TOOLS: Tool[] = [
         href: "/currency-converter",
         available: false,
     },
+    {
+        id: "invoice-translation-creator",
+        title: "Creador de Traducción de Factura",
+        description: "Genera el formato de traducción de factura requerido por aduanas, ítem por ítem.",
+        icon: "📝",
+        href: "/herramientas/invoice-translation",
+        available: true,
+    },
 ];
