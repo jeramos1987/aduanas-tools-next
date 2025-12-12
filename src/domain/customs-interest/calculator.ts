@@ -30,7 +30,8 @@ export function calculateCustomsInterest(input: CustomsInterestInput): CustomsIn
             daysDelay: 0,
             interestFactor: 0,
             interestAmount: 0,
-            totalDebt: debtAmount
+            totalDebt: debtAmount,
+            totalDebtInSoles: Math.round(debtAmount * input.exchangeRate)
         };
     }
 
@@ -46,10 +47,15 @@ export function calculateCustomsInterest(input: CustomsInterestInput): CustomsIn
     // 4. Calcular total
     const totalDebt = debtAmount + interestAmount;
 
+    // 5. Calcular deuda en soles y redondear
+    // Regla Sunat: Redondeo al entero
+    const totalDebtInSoles = Math.round(totalDebt * input.exchangeRate);
+
     return {
         daysDelay: diffDays,
         interestFactor,
         interestAmount,
-        totalDebt
+        totalDebt,
+        totalDebtInSoles
     };
 }

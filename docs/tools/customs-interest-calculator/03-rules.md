@@ -21,6 +21,13 @@ Monto adicional generado por el atraso.
 Monto final a cancelar.
 > **Total** = Importe Deuda (USD) + Interés
 
+### 5. Conversión a Soles y Redondeo
+Cálculo del monto final a pagar en moneda nacional.
+> **Total Soles** = Total (USD) * Tipo de Cambio
+
+*   **Redondeo:** El monto final en Soles se redondea al número entero más cercano (Redondeo oficial SUNAT).
+
+
 ## Validaciones y Condiciones
 *   **Moneda:** El cálculo se realiza en Dólares Americanos (USD) según indicación del usuario, aunque el pago final en bancos se realice usualmente en Soles al tipo de cambio del día.
 *   **Fechas:**

@@ -10,6 +10,7 @@ export function useCustomsInterestCalculator() {
         damType: DamType;
         computationDate: string;
         paymentDate: string;
+        exchangeRate: number;
     }) => {
         // Convert strings to Date objects ensuring local timezone handling or UTC as needed
         // For simplicity treating strings yyyy-mm-dd as dates
@@ -18,6 +19,7 @@ export function useCustomsInterestCalculator() {
             damType: data.damType,
             computationDate: new Date(data.computationDate + 'T00:00:00'),
             paymentDate: new Date(data.paymentDate + 'T00:00:00'),
+            exchangeRate: data.exchangeRate,
         };
 
         const res = calculateCustomsInterest(input);

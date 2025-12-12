@@ -13,6 +13,13 @@ export function InterestCalculatorResult({ result }: Props) {
         }).format(amount);
     };
 
+    const formatSoles = (amount: number) => {
+        return new Intl.NumberFormat('es-PE', {
+            style: 'currency',
+            currency: 'PEN',
+        }).format(amount);
+    };
+
     return (
         <div className="mt-8 overflow-hidden rounded-lg bg-white shadow">
             <div className="px-4 py-5 sm:px-6 bg-gray-50">
@@ -42,6 +49,12 @@ export function InterestCalculatorResult({ result }: Props) {
                         <dt className="text-base font-medium text-gray-900">Total Deuda Actualizada</dt>
                         <dd className="mt-1 text-xl font-bold text-violet-700 sm:col-span-2 sm:mt-0">
                             {formatMoney(result.totalDebt)}
+                        </dd>
+                    </div>
+                    <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6 bg-blue-50">
+                        <dt className="text-base font-medium text-gray-900">Total en Soles (Redondeado)</dt>
+                        <dd className="mt-1 text-xl font-bold text-blue-700 sm:col-span-2 sm:mt-0">
+                            {formatSoles(result.totalDebtInSoles)}
                         </dd>
                     </div>
                 </dl>

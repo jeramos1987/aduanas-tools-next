@@ -13,6 +13,8 @@ El usuario selecciona la modalidad de despacho para determinar las reglas de ven
 El sistema solicita las fechas para el cálculo del periodo de mora:
 *   **Fecha de Cómputo:** El usuario ingresa la fecha inicial desde donde se debe contabilizar el interés (día siguiente al vencimiento).
 *   **Fecha de Pago:** El usuario selecciona la fecha en la que planea pagar (se pre-llena con la fecha actual "hoy").
+*   **Tipo de Cambio:** El usuario debe ingresar el Tipo de Cambio Venta vigente a la fecha de pago (consultable en el link provisto).
+
 
 ## 4. Proceso de Cálculo
 El sistema ejecuta la lógica de actualización de deuda:
@@ -24,4 +26,7 @@ El sistema ejecuta la lógica de actualización de deuda:
 Se presenta al usuario:
 *   El cálculo detallado de días.
 *   El monto correspondiente a los intereses.
-*   El total consolidado a pagar.
+*   El monto correspondiente a los intereses (USD).
+*   El total consolidado a pagar en USD.
+*   **El total consolidado a pagar en Soles** (según T.C. ingresado y redondeo oficial).
+

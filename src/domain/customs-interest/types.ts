@@ -24,7 +24,16 @@ export interface CustomsInterestInput {
     /**
      * Fecha de pago (Fin del periodo de interés)
      */
+    /**
+     * Fecha de pago (Fin del periodo de interés)
+     */
     paymentDate: Date;
+
+    /**
+     * Tipo de cambio venta vigente a la fecha de pago
+     * Se usa para la conversión y redondeo final (regla SUNAT)
+     */
+    exchangeRate: number;
 }
 
 export interface CustomsInterestResult {
@@ -32,4 +41,8 @@ export interface CustomsInterestResult {
     interestFactor: number;
     interestAmount: number;
     totalDebt: number;
+    /**
+     * Total deuda en Soles (aplicando redondeo oficial)
+     */
+    totalDebtInSoles: number;
 }

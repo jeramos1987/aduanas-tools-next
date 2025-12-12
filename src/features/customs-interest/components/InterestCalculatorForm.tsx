@@ -8,6 +8,7 @@ interface Props {
         damType: DamType;
         computationDate: string;
         paymentDate: string;
+        exchangeRate: number;
     }) => void;
 }
 
@@ -16,16 +17,19 @@ export function InterestCalculatorForm({ onCalculate }: Props) {
     const [damType, setDamType] = useState<DamType>('ANTICIPATED');
     const [computationDate, setComputationDate] = useState<string>('');
     const [paymentDate, setPaymentDate] = useState<string>(new Date().toISOString().split('T')[0]);
+    const [exchangeRate, setExchangeRate] = useState<string>('');
+
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (!debtAmount || !computationDate || !paymentDate) return;
+        if (!debtAmount || !computationDate || !paymentDate || !exchangeRate) return;
 
         onCalculate({
             debtAmount: parseFloat(debtAmount),
             damType,
             computationDate,
             paymentDate,
+            exchangeRate: parseFloat(exchangeRate),
         });
     };
 
@@ -103,6 +107,35 @@ export function InterestCalculatorForm({ onCalculate }: Props) {
                                 className="block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm p-2 border"
                             />
                         </div>
+                    </div>
+
+                    <div>
+                        <label htmlFor="exchangeRate" className="block text-sm font-medium text-gray-700">
+                            Tipo de Cambio (Venta)
+                        </label>
+                        <div className="mt-1">
+                            <input
+                                type="number"
+                                id="exchangeRate"
+                                step="0.001"
+                                min="0"
+                                required
+                                value={exchangeRate}
+                                onChange={(e) => setExchangeRate(e.target.value)}
+                                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm p-2 border"
+                                placeholder="0.000"
+                            />
+                        </div>
+                        <p className="mt-1 text-xs text-blue-600">
+                            <a
+                                href="https://ww3.sunat.gob.pe/cl-ad-ittipocambioconsulta/TipoCambioS01Alias?accion=consultarTipoCambio"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:underline"
+                            >
+                                Consultar en SUNAT ↗
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
